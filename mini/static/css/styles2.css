@@ -1,0 +1,16 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    grid-gap: 20px; /* Gap between grid items */
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.result-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  

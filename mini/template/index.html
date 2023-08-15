@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" type="text/css" href="static\css\style.css">
+    <script>
+        // Function to update the date and time
+        function updateDateTime() {
+            var dateTimeElement = document.getElementById("date-time");
+            var currentDateTime = new Date();
+            var dateTimeString = currentDateTime.toLocaleString();
+            dateTimeElement.innerHTML = dateTimeString;
+        }
+
+        // Call the updateDateTime function every second
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</head>
+<body>
+    <div id="header">
+        <h1 class="title">Mini Project on Twitter Sentiment Analysis</h1>
+    </div>
+
+    <div id="logo-container">
+        <img src="static\images\twitter.jpg" alt="Twitter Logo"> <br> <br>
+    </div>
+
+    <div id="date-time">
+        <span id="date"></span>
+        <span id="time"></span>
+    </div>
+
+    <div id="content">
+        <h2 class="subtitle">Test our Model!</h2>
+            <form method="POST" action="/predict" class="form">
+                <input type="text" id="sentence" name="inp" required placeholder="Enter a sentence...">
+                <button type="submit" class="predict-btn">Predict</button>
+            </form>
+    
+        <h1 class="output">{{message}}</h1>
+    </div>
+    <br> <br>
+    <button id="show-results-btn" onclick="showResults()">Show Results of Project</button>
+
+    <div id="results-container">
+        <h2>Results</h2>
+        <div class="grid-container">
+            <div class="result">
+                <img src="images\accuracy_score.png" alt="Accuracy Chart">
+            </div>
+            <div class="result">
+                <img src="images\f1_score.png" alt="F1 Score Chart">
+            </div>
+            <div class="result">
+                <img src="images\precision_score.png" alt="Precision Chart">
+            </div>
+            <div class="result">
+                <img src="images\recall_score.png" alt="Recall Chart">
+            </div>
+        </div>
+        <p id="best-score">SVC model using TF-IDF technique has the best score</p>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>Terms &amp; Condition | Fair Use Policy | &#169; All rights reserved</p>
+        </div>
+    </footer>
+
+
+
+    <div id="author">
+        <span>Done by Shivam</span>
+    </div>
+
+    <script src="static\js\animations.js"></script>
+</body>
+</html>
